@@ -1,0 +1,454 @@
+﻿@page "/events"
+@layout NoMenuLayout
+@using System.Linq
+
+<PageTitle>Info</PageTitle>
+
+@* Меню *@
+<nav class="menu">
+	<div class="logo">
+		<a href="/home" class="logo-link">
+			Happy <span class="logo-color">Hearts</span> <span class="heart">❤️</span>
+		</a>
+	</div>
+	<ul class="nav-links">
+		<li><a href="/home" class="nav-links-active">Главная</a></li>
+		<li><a href="/events">Мероприятия</a></li>
+		<li><a href="/info">О нас</a></li>
+		<li><a href="/help">Помочь</a></li>
+	</ul>
+</nav>
+@* Меню *@
+
+@* Тело *@
+<section>
+	<h2>Мероприятия</h2>
+	<div class="events">
+		<div class="event-card">
+			<a href="https://dobro.ru/event/11196991?ysclid=map2pbn4pq268356163" class="event-card-href">
+				<img class="event-image" src="https://newsmiass.ru/news/2025/05/12/80007/16.jpg" alt="Благотворительный концерт" />
+				<div class="event-content">
+					<div class="event-title">Благотворительный концерт</div>
+					<div class="event-description">
+						Ежегодный концерт, который собирает средства для развития наших программ поддержки детей.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://nashideti.fund/about/events/blagotvoritelnye-master-klassy?ysclid=map2ro84th790400189" class="event-card-href">
+				<img class="event-image" src="https://sun9-13.userapi.com/impg/43LMWsotl0Z76pJbaaen552jWPr361dF3vspcg/OViJFbEADhc.jpg?size=590x324&quality=95&sign=3f7a8c3fb20c659400ba7c70e12d5a99&c_uniq_tag=pzEzcHDkSb2DlqLak5nseJIMje3HtBQV8FgUXYclA84&type=album" alt="Образовательный мастер-класс" />
+				<div class="event-content">
+					<div class="event-title">Образовательный мастер-класс</div>
+					<div class="event-description">
+						Мастер-классы для детей из всех регионов, направленные на развитие творческих и интеллектуальных способностей.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://dobro.ru/event/11197945?ysclid=map2t8yekn304999163" class="event-card-href">
+				<img class="event-image" src="https://budfil.sspi.ru/images/misc/0267/05.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Волонтерская акция</div>
+					<div class="event-description">
+						Регулярные акции поддержки семей, где волонтеры помогают с товарами первой необходимости.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://podari-zhizn.ru/ru/what-we-do/events/den-pamyati" class="event-card-href">
+				<img class="event-image" src="https://www.newsko.ru/media/8692584/volontery-permi.jpg?size=1200" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">День памяти</div>
+					<div class="event-description">
+						Встреча родителей детей, ушедших под нашим фондом.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://podari-zhizn.ru/ru/what-we-do/events/bezumnoe-chaepitie" class="event-card-href">
+				<img class="event-image" src="https://www.mos.ru/upload/newsfeed/news/faaaf4b61250ac9c52bb77f1ca0cda5a/1.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Праздничное чаепитие</div>
+					<div class="event-description">
+						Общее чаепитие в честь дня рождения фонда и подарки гостям.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://podari-zhizn.ru/ru/what-we-do/proshedshie/den-donora" class="event-card-href">
+				<img class="event-image" src="https://sev.tv/image/c7575271-281b-431e-87fc-7e9e336298f0.png" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">День донора</div>
+					<div class="event-description">
+						Праздничный день в честь того, кто помогает другим людям.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://podari-zhizn.ru/ru/what-we-do/proshedshie/vystavki" class="event-card-href">
+				<img class="event-image" src="https://cdn.culture.ru/images/036fd1c3-3328-555b-8b48-9b463792e578" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Выставка детских рисунков</div>
+					<div class="event-description">
+						Рисунки детей об их мечтах и надеждах.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://podari-zhizn.ru/ru/what-we-do/proshedshie/igry-pobeditelei" class="event-card-href">
+				<img class="event-image" src="https://aif-s3.aif.ru/images/031/438/be7d6e85acafbf7d27097f0afa5b537c.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Всемирные детские игры</div>
+					<div class="event-description">
+						Праздник любви, жизни и спорта.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://bfkh.ru/what-are-we-doing/events/sedmoy-futbolnyy-match-na-patrikakh/" class="event-card-href">
+				<img class="event-image" src="https://static.adm-vidnoe.ru/iblock/a9d/90jy78tgmm5rwte0j6i08rmc7vji7r9j.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Благотворительный футбольный день</div>
+					<div class="event-description">
+					    Традиционный футбольный матч, направленный на благотворительность.
+					</div>
+				</div>
+			</a>
+		</div>
+		</div>
+
+		<h2>Проекты</h2>
+		<div class="events">
+		<div class="event-card">
+			<a href="https://www.life-line.ru/zhizn-fonda/nashi-proekty/pyaterochka-konfetka-dobroty/" class="event-card-href">
+				<img class="event-image" src="https://avatars.mds.yandex.net/i?id=a5582a78b453ad2ccf272735f0eb34b3_l-5221314-images-thumbs&n=13" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Конфеты доброты</div>
+					<div class="event-description">
+						Часть с суммы купленных конфет идут на благотворительность.
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="event-card">
+			<a href="https://www.life-line.ru/zhizn-fonda/nashi-proekty/zabeg-dostigaya-tseli/" class="event-card-href">
+				<img class="event-image" src="https://smi44.ru/upload/iblock/297/4xejxyu2g3w2p34742xh4clld24ag0k3/marafon.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Забег "Достигая цели"</div>
+					<div class="event-description">
+						Благотворительный забег, направленный на помощь людям.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://www.life-line.ru/zhizn-fonda/nashi-proekty/blagotvoritelnaya-lyzhnya-fonda-liniya-zhizni/" class="event-card-href">
+				<img class="event-image" src="https://sh-novonikolskaya-r69.gosweb.gosuslugi.ru/netcat_files/48/234/lizy60224.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Благотворительная лыжня «Линия жизни»</div>
+					<div class="event-description">
+						Лыжи для всех!
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://www.life-line.ru/zhizn-fonda/nashi-proekty/dobraya-podpiska-blagotvoritelnyy-servis-dlya-kompaniy/" class="event-card-href">
+				<img class="event-image" src="https://sun9-70.userapi.com/impg/fmybzKfwUatKmiP8UErCmTDGbg46hNu3JLChfg/ZWcCmHIl2P8.jpg?size=604x286&quality=95&sign=889dcff47332dc0d18e39e8e5404d6fa&type=album" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Добрая подписка</div>
+					<div class="event-description">
+						Подписка для ежемесячных пожертвований.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://papa.bfkh.ru/" class="event-card-href">
+				<img class="event-image" src="https://bfkh.ru/upload/iblock/648/cubmekayjva9ma7hh3ynep2t8gml6ttw/Bez-imeni.png" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Просто быть рядом</div>
+					<div class="event-description">
+						Люди, готовые помочь вам, всегда рядом.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://bfkh.ru/who-are-we/projects/uroki-dobra/" class="event-card-href">
+				<img class="event-image" src="https://cdn.culture.ru/images/6f1d1a09-3d38-5ee7-9bf6-a887177d4e60" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Уроки добра</div>
+					<div class="event-description">
+						Быть добрым гораздо проще, чем кажется.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://bfkh.ru/who-are-we/projects/zhizn-vashego-rebenka-v-shkole-posle-onkologicheskogo-ili-drugogo-tyazhelogo-zabolevaniya-mozga/" class="event-card-href">
+				<img class="event-image" src="https://www.editorialgeu.com/blog/wp-content/uploads/2022/03/kids-laughing-at-their-classmate-scaled.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Мероприятия против буллинга</div>
+					<div class="event-description">
+						Помощь детям с буллингом в школах после реабилитации.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://www.life-line.ru/zhizn-fonda/nashi-proekty/magazin-pooshchreniy/" class="event-card-href">
+				<img class="event-image" src="https://avatars.mds.yandex.net/i?id=a2fedaf78b79a5c8429b33ce7aefafee_l-5248224-images-thumbs&n=13" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Магазин поощерений</div>
+					<div class="event-description">
+						Помощь своему городу, благодаря покупкам в магазине.
+					</div>
+				</div>
+			</a>
+		</div><div class="event-card">
+			<a href="https://фонд-помощи.рф/produkty-dlya-semej/" class="event-card-href">
+				<img class="event-image" src="https://gus-info.ru/i/news/Xub2qjLssLD.jpg" alt="Волонтерская акция" />
+				<div class="event-content">
+					<div class="event-title">Продукты для семей</div>
+					<div class="event-description">
+						В рамках проекта происходит помощь малоимущим семьям.
+					</div>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+</section>
+@* Тело *@
+
+@* Подвал *@
+<footer>
+	<div class="footer-container">
+		<p>© 2025 Благотворительный фонд Happy Hearts. Все права защищены.</p>
+		<div class="contact-info">
+			<p>Контакты: info@happyhearts.org | +7 (123) 456-78-90</p>
+		</div>
+		<div>
+			<a href="https://facebook.com/happyhearts" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+				<svg style="vertical-align: middle;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.03 3.66 9.18 8.44 9.92v-7.02H7.9v-2.9h2.54V9.41c0-2.5 1.5-3.89 3.78-3.89 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.77-1.64 1.56v1.88h2.8l-.45 2.9h-2.35v7.02c4.78-.73 8.44-4.89 8.44-9.92z" /></svg>
+			</a>
+			<a href="https://instagram.com/happyhearts" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+				<svg style="vertical-align: middle;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" /></svg>
+			</a>
+			<a href="https://twitter.com/happyhearts" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+				<svg style="vertical-align: middle;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 001.98-2.48 9.22 9.22 0 01-2.88 1.12 4.52 4.52 0 00-7.7 4.13A12.83 12.83 0 013 4.8a4.5 4.5 0 001.4 6.03 4.48 4.48 0 01-2.05-.56v.06a4.52 4.52 0 003.62 4.42 4.5 4.5 0 01-2.03.07 4.52 4.52 0 004.22 3.14 9.07 9.07 0 01-5.61 1.94A9.46 9.46 0 012 18.16 12.82 12.82 0 008.29 20c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.18 8.18 0 0023 3z" /></svg>
+			</a>
+		</div>
+	</div>
+</footer>
+@* Подвал *@
+
+
+<style>
+	/* Меню */
+	.menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: linear-gradient(90deg, #ff758c, #ff1e70);
+		padding: 0.8rem 2rem;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		flex-wrap: nowrap;
+	}
+
+	.logo {
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: #fff;
+		user-select: none;
+		white-space: nowrap;
+	}
+
+	.logo-color {
+		color: red;
+	}
+
+	.logo-link {
+		color: #fff;
+		text-decoration: none;
+		font-size: 1.8rem;
+		font-weight: 700;
+		user-select: none;
+		white-space: nowrap;
+		display: inline-flex;
+		align-items: center;
+	}
+
+		.logo-link:hover {
+			text-decoration: none;
+			cursor: pointer;
+			color: whitesmoke;
+		}
+
+	.heart {
+		margin-left: 0.3rem;
+		color: #ff748c;
+		animation: heartbeat 1.5s infinite;
+		display: inline-block;
+	}
+
+	.nav-links {
+		list-style: none;
+		display: flex;
+		gap: 1.5rem;
+		margin: 0;
+		padding: 0;
+	}
+
+		.nav-links li a {
+			color: white;
+			text-decoration: none;
+			font-weight: 600;
+			font-size: 1.1rem;
+			transition: color 0.3s ease;
+			white-space: nowrap;
+		}
+
+			.nav-links li a:hover {
+				color: #ffe6f0;
+				text-shadow: 0 0 10px purple;
+			}
+
+	.nav-links-active {
+		color: black;
+	}
+	/* Меню */
+
+	/* Тело */
+	body {
+		background-color: #fff7fe;
+	}
+
+	section h2 {
+		font-size: 2rem;
+		color: #e74c3c;
+		border-bottom: 3px solid #e74c3c;
+		padding-bottom: 6px;
+		margin-bottom: 5px;
+		margin-top: 40px;
+		margin-left: 175px;
+		margin-right: 175px;
+	}
+
+	.about-text, .activities-text {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #444;
+	}
+
+	.events {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+		padding: 40px calc((100% - (300px * 3)) / 2);
+		}
+
+	.event-card {
+		background: #fff0f0;
+		border-radius: 12px;
+		border: 2px solid #c0392b;
+		box-shadow: 0 4px 8px rgba(231,76,60,0.15);
+		width: 280px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.event-card-href {
+		text-decoration: none;
+		color: #c0392b;
+		cursor: pointer;
+	}
+
+	.event-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 4px 16px rgba(17, 11, 21,0.4);
+	}
+
+	.event-image {
+		width: 100%;
+		height: 180px;
+		object-fit: cover;
+	}
+
+	.event-content {
+		padding: 15px 20px;
+		flex-grow: 1;
+	}
+
+	.event-title {
+		font-weight: 700;
+		color: #c0392b;
+		margin-bottom: 8px;
+		font-size: 1.2rem;
+	}
+
+	.event-description {
+		font-size: 1rem;
+		color: #555;
+	}
+	/* Тело */
+
+
+	/* Подвал */
+	footer {
+		background-color: #e74c3c;
+		color: white;
+		padding: 30px 20px;
+		text-align: center;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin-top: 60px;
+	}
+
+		footer .footer-container {
+			max-width: auto;
+			margin: 0 auto;
+		}
+
+		footer p {
+			margin: 8px 0;
+			font-size: 1rem;
+		}
+
+		footer .contact-info {
+			margin: 15px 0;
+		}
+
+		footer a.social-link {
+			color: white;
+			margin: 0 10px;
+			font-size: 1.3rem;
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+			footer a.social-link:hover {
+				color: #f9d5d3;
+			}
+	/* Подвал */
+</style>
+
+@code {
+
+
+}
+

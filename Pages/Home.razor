@@ -1,0 +1,498 @@
+﻿@page "/home"
+@using CharityWebServer2.Models
+@using Microsoft.AspNetCore.WebUtilities
+@layout NoMenuLayout
+@inject NavigationManager navigationManager
+@inject FormDataService dataService
+
+
+<PageTitle>Home</PageTitle>
+
+@* Меню *@
+<nav class="menu">
+    <div class="logo">
+        <a href="/home" class="logo-link">
+            Happy <span class="logo-color">Hearts</span> <span class="heart">❤️</span>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/home" class="nav-links-active">Главная</a></li>
+        <li><a href="/events">Мероприятия</a></li>
+        <li><a href="/info">О нас</a></li>
+        <li><a href="/help">Помочь</a></li>
+    </ul>
+</nav>
+@* Меню *@
+
+@* Тело *@
+<div class="page-container">
+    <header>
+        <h1>Happy Hearts</h1>
+        <p>Добро пожаловать в благотворительный фонд Happy Hearts!</p>
+    </header>
+
+    <section>
+        <h2>Наш девиз</h2>
+        <p class="about-text">
+            Лишь вместе мы способны создать мир, где каждое сердце и большое, и маленькое - счастливо!
+        </p>
+    </section>
+
+    <section>
+        <h2>Наша деятельность</h2>
+        <p class="activities-text">
+            Мы организуем благотворительные мероприятия, поддерживаем образовательные проекты и помогаем семьям с ограниченными возможностями. Наши программы направлены на улучшение качества жизни, образование и здоровье детей.
+        </p>
+    </section>
+
+    <section>
+        <h2>Выполнено</h2>
+        <div class="events2">
+            <div class="event-card1">
+                <div class="event-content">
+                    <div class="event-title1">607 456 278</div>
+                    <div class="event-description">
+                        Рублей уже собрано за все время
+                    </div>
+                </div>
+            </div>
+            <div class="event-card1">
+                <div class="event-content">
+                    <div class="event-title1">10 329</div>
+                    <div class="event-description">
+                        Случаев помощи взрослым и детям
+                    </div>
+                </div>
+            </div>
+            <div class="event-card1">
+                <div class="event-content">
+                    <div class="event-title1">128</div>
+                    <div class="event-description">
+                        Случаев поставки медицинского оборудования в больницы
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<section>
+    <h2 class="events1-text">Дети</h2>
+    <div class="events1">
+        <div class="event-card">
+            <a href="/help" class="event-card-href">
+                <img class="event-image" src="https://house.jofo.me/data/userfiles/106/images/i41842_original_fbd2c29e51a81f103af29c1bcdc32c95.png" alt="Благотворительный концерт" />
+                <div class="event-content">
+                    <div class="event-title">Алексей</div>
+                    <div class="event-description1">
+                        10 летний Алеша имеет серьезное редкое заболевание, требуещее лекарств и операцию в клинике за границей в Швеции.
+                    </div>
+                    <p class="event-button">Помочь</p>
+                </div>
+            </a>
+        </div>
+        <div class="event-card">
+            <a href="/help" class="event-card-href">
+                <img class="event-image" src="https://media.pravoslavie.ru/436482.p.jpg?mtime=1718444085" alt="Благотворительный концерт" />
+                <div class="event-content">
+                    <div class="event-title">Алекандра</div>
+                    <div class="event-description1">
+                        Маленькая Саша болеет раком и в данный момент ей требуется срочная дорогостоящая операция.
+                    </div>
+                    <p class="event-button">Помочь</p>
+                </div>
+            </a>
+        </div>
+        <div class="event-card">
+            <a href="/help" class="event-card-href">
+                <img class="event-image" src="https://asi.org.ru/wp-content/uploads/2020/02/IMG_0292-2.jpg" alt="Благотворительный концерт" />
+                <div class="event-content">
+                    <div class="event-title">Иван</div>
+                    <div class="event-description1">
+                        Ване срочно нужны лекарства из-за границы, имеющие высокую цену.
+                    </div>
+                    <p class="event-button">Помочь</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<div class="page-container">
+    <section>
+        <h2>Мероприятия</h2>
+        <div class="events">
+            <div class="event-card">
+                <a href="https://dobro.ru/event/11196991?ysclid=map2pbn4pq268356163" class="event-card-href">
+                    <img class="event-image" src="https://newsmiass.ru/news/2025/05/12/80007/16.jpg" alt="Благотворительный концерт" />
+                    <div class="event-content">
+                        <div class="event-title">Благотворительный концерт</div>
+                        <div class="event-description">
+                            Ежегодный концерт, который собирает средства для развития наших программ поддержки детей.
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://nashideti.fund/about/events/blagotvoritelnye-master-klassy?ysclid=map2ro84th790400189" class="event-card-href">
+                    <img class="event-image" src="https://sun9-13.userapi.com/impg/43LMWsotl0Z76pJbaaen552jWPr361dF3vspcg/OViJFbEADhc.jpg?size=590x324&quality=95&sign=3f7a8c3fb20c659400ba7c70e12d5a99&c_uniq_tag=pzEzcHDkSb2DlqLak5nseJIMje3HtBQV8FgUXYclA84&type=album" alt="Образовательный мастер-класс" />
+                    <div class="event-content">
+                        <div class="event-title">Образовательный мастер-класс</div>
+                        <div class="event-description">
+                            Мастер-классы для детей из всех регионов, направленные на развитие творческих и интеллектуальных способностей.
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="https://dobro.ru/event/11197945?ysclid=map2t8yekn304999163" class="event-card-href">
+                    <img class="event-image" src="https://budfil.sspi.ru/images/misc/0267/05.jpg" alt="Волонтерская акция" />
+                    <div class="event-content">
+                        <div class="event-title">Волонтерская акция</div>
+                        <div class="event-description">
+                            Регулярные акции поддержки семей, где волонтеры помогают с товарами первой необходимости.
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="/events" class="event-card-href">
+                    <img class="event-image" src="https://avatars.mds.yandex.net/i?id=68d8e147b1531e799cb650db35783b38_l-5235536-images-thumbs&n=13" alt="Волонтерская акция" />
+                    <div class="event-content">
+                        <div class="event-title">Другие акции</div>
+                        <div class="event-description">
+                            Множество других акций и мероприятий, проводящиеся для помощи людям.
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+@* Тело *@
+
+@* Подвал *@
+<footer>
+    <div class="footer-container">
+        <p>© 2025 Благотворительный фонд Happy Hearts. Все права защищены.</p>
+        <div class="contact-info">
+            <p>Контакты: info@happyhearts.org | +7 (123) 456-78-90</p>
+        </div>
+        <div>
+            <a href="https://facebook.com/happyhearts" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                <svg style="vertical-align: middle;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 5.03 3.66 9.18 8.44 9.92v-7.02H7.9v-2.9h2.54V9.41c0-2.5 1.5-3.89 3.78-3.89 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.77-1.64 1.56v1.88h2.8l-.45 2.9h-2.35v7.02c4.78-.73 8.44-4.89 8.44-9.92z" /></svg>
+            </a>
+            <a href="https://instagram.com/happyhearts" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                <svg style="vertical-align: middle;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.5-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" /></svg>
+            </a>
+            <a href="https://twitter.com/happyhearts" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+                <svg style="vertical-align: middle;" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 001.98-2.48 9.22 9.22 0 01-2.88 1.12 4.52 4.52 0 00-7.7 4.13A12.83 12.83 0 013 4.8a4.5 4.5 0 001.4 6.03 4.48 4.48 0 01-2.05-.56v.06a4.52 4.52 0 003.62 4.42 4.5 4.5 0 01-2.03.07 4.52 4.52 0 004.22 3.14 9.07 9.07 0 01-5.61 1.94A9.46 9.46 0 012 18.16 12.82 12.82 0 008.29 20c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.18 8.18 0 0023 3z" /></svg>
+            </a>
+        </div>
+    </div>
+</footer>
+
+@* Подвал *@
+
+
+
+
+<style>
+    /* Меню */
+    .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #ff758c, #ff1e70);
+    padding: 0.8rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-wrap: nowrap;
+    }
+
+    .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    user-select: none;
+    white-space: nowrap;
+    }
+
+    .logo-color {
+    color: red;
+    }
+
+    .logo-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    user-select: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    }
+
+    .logo-link:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: whitesmoke;
+    }
+
+    .heart {
+    margin-left: 0.3rem;
+    color: #ff748c;
+    animation: heartbeat 1.5s infinite;
+    display: inline-block;
+    }
+
+    .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    }
+
+    .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    }
+
+    .nav-links li a:hover {
+    color: #ffe6f0;
+    text-shadow: 0 0 10px purple;
+    }
+
+    .nav-links-active {
+    color: black;
+    }
+    /* Меню */
+
+    /* Тело */
+    body {
+    background-color: #fff7fe;
+    }
+
+    .page-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #333;
+    }
+
+    header {
+    text-align: center;
+    margin-bottom: 40px;
+    }
+
+    header h1 {
+    font-size: 3rem;
+    color: #e74c3c; /* happy heart red */
+    margin-bottom: 10px;
+    }
+
+    header p {
+    font-size: 1.2rem;
+    color: #555;
+    }
+
+    section {
+    margin-bottom: 50px;
+    }
+
+    section h2 {
+    font-size: 2rem;
+    color: #e74c3c;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    }
+
+    .about-text, .activities-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    }
+
+    .events1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    }
+
+    .events1-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    color: #e74c3c;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    margin-right: 180px;
+    margin-left: 180px;
+    margin-top: -30px;
+    }
+
+    .event-button {
+    font-size: 20px;
+    background: #c0392b;
+    border-radius: 12px;
+    border: 2px solid #c0392b;
+    color: white;
+    position: center;
+    text-align: center;
+    height: 35px;
+    height: -35px;
+    margin-top: 9px;
+    margin-bottom: -3px;
+    }
+
+    .events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    }
+
+    .events2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    }
+
+    .event-card {
+    background: #fff0f0;
+    border-radius: 12px;
+    border: 2px solid #c0392b;
+    box-shadow: 0 4px 8px rgba(231,76,60,0.15);
+    width: 280px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card1 {
+    width: 250px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border 0.5s ease;
+    transform-style: preserve-3d;
+    }
+
+    .event-card1:hover {
+    cursor: default;
+    transform: scale(1.1, 1.1);
+    border: 1px outset #c0392b;
+    border-radius: 12px;
+    }
+
+    .event-title1 {
+    font-weight: 700;
+    color: #c0392b;
+    margin-bottom: 8px;
+    font-size: 2.1rem;
+    }
+
+    .event-card-href {
+    text-decoration: none;
+    color: #c0392b;
+    cursor: pointer;
+    }
+
+    .event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 16px rgba(17, 11, 21,0.4);
+    }
+
+    .event-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    }
+
+    .event-content {
+    padding: 15px 20px;
+    flex-grow: 1;
+    }
+
+    .event-title {
+    font-weight: 700;
+    color: #c0392b;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    }
+
+    .event-description {
+    font-size: 1rem;
+    color: #555;
+    }
+
+    .event-description1 {
+    font-size: 1rem;
+    color: #555;
+    height: 120px;
+    }
+    /* Тело */
+
+
+    /* Подвал */
+    footer {
+    background-color: #e74c3c;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 60px;
+    }
+
+    footer .footer-container {
+    max-width: auto;
+    margin: 0 auto;
+    }
+
+    footer p {
+    margin: 8px 0;
+    font-size: 1rem;
+    }
+
+    footer .contact-info {
+    margin: 15px 0;
+    }
+
+    footer a.social-link {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    }
+
+    footer a.social-link:hover {
+    color: #f9d5d3;
+    }
+    /* Подвал */
+</style>
+
+@code {
+
+    private string v;
+
+    private void OnLoad()
+    {
+        v = dataService.Name; // Присваиваем значение глобальной переменной локальной переменной
+    }
+}

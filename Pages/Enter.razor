@@ -1,0 +1,67 @@
+﻿@page "/login"
+@layout NoMenuLayout
+@using CharityWebServer2.Models
+@using CharityWebServer2.Services
+@using System.ComponentModel.DataAnnotations
+@inject AuthService AuthService
+@inject FormDataService dataService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Login</PageTitle>
+<div class="forma" style="margin-top: 100px">
+    <h3 class="text-center" style="color: #E63946; font-size: 36px; border-bottom: 3px solid #e74c3c; margin-left: 350px; margin-right: 350px;">Авторизация</h3>
+    <EditForm Model="@loginModel" OnValidSubmit="@HandleLogin" class="p-4" style="background-color: white; width: 600px; position: сenter; margin: auto;">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group">
+            <label for="login" style="font-weight: bold; color: #444; font-size: 20px; margin-top: 5px;">Логин:</label>
+            <InputText id="login" @bind-Value="loginModel.Login" class="form-control" style="border: 1px solid #e74c3c; border-radius: 5px;" />
+            <ValidationMessage For="@(() => loginModel.Login)" />
+        </div>
+
+        <div class="form-group">
+            <label for="password" style="font-weight: bold; color: #444; font-size: 20px; margin-top: 7px;">Пароль:</label>
+            <InputText id="password" type="password" @bind-Value="loginModel.Password" class="form-control" style="border: 1px solid #e74c3c; border-radius: 5px;" />
+            <ValidationMessage For="@(() => loginModel.Password)" />
+        </div>
+
+        <button onclick="() => NavigateWithParameter()" type="submit" class="btn" style="background-color: #E63946; color: white; margin-top: 20px; border-radius: 5px; font-size: 25px; width: 100%;">Войти</button>
+    </EditForm>
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger mt-3">@errorMessage</div>
+    }
+
+    <p class="text-center mt-3" style="color: #444;">Нет аккаунта? <a href="/" style="color: #E63946; margin-top: -20px;">Зарегистрируйтесь</a></p>
+</div>
+@code {
+    private LoginModel loginModel = new();
+    private string errorMessage;
+
+    private class LoginModel
+    {
+        [Required(ErrorMessage = "Логин обязателен")]
+        public string Login { get; set; }
+
+        [Required(ErrorMessage = "Пароль обязателен")]
+        public string Password { get; set; }
+    }
+
+    private async Task HandleLogin()
+    {
+        errorMessage = null;
+
+        var result = await AuthService.LoginAsync(loginModel.Login, loginModel.Password);
+
+        if (result)
+        {
+            dataService.Name = loginModel.Login;
+            NavigationManager.NavigateTo("/home");
+        }
+        else
+        {
+            errorMessage = "Неверный логин или пароль";
+        }
+    }
+}
